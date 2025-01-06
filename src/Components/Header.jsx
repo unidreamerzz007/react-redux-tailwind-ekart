@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({insideHome}) => {
   const [wishlistCount, setWishlistCount] = useState(0);
   const [cartCount, setCartCount] = useState(0);
 
@@ -11,7 +11,8 @@ const Header = () => {
         <i className='fa-solid fa-truck-fast me-1'></i>E cart
       </Link>
       <ul className='flex-1 text-right'>
-        <li className='list-none inline-block px-5'>
+        {insideHome &&
+          <li className='list-none inline-block px-5'>
           <label htmlFor="search" className="sr-only">Search Products</label>
           <input
             id="search"
@@ -21,6 +22,7 @@ const Header = () => {
             placeholder='Search Products Here...'
           />
         </li>
+        }
         <li className='list-none inline-block px-5'>
           <Link to='/wishlist'>
             <i className='fa-solid fa-heart text-red-600'></i>
