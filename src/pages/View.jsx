@@ -1,7 +1,11 @@
 import React from 'react'
 import Header from '../Components/Header'
+import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const View = () => {
+  const {id}=useParams()
+  const {allProducts}=useSelector(state=>state)
   return (
     <>
       <Header />
@@ -29,7 +33,7 @@ const View = () => {
           </div>
 
 
-        </div>
+        </div>l
         
 
       </div>
@@ -38,3 +42,4 @@ const View = () => {
 }
 
 export default View
+
